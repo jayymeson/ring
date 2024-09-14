@@ -228,8 +228,8 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 Caso tenha alguma dúvida ou sugestão, fique à vontade para entrar em contato:
 
-- **Email**: exemplo@dominio.com
-- **LinkedIn**: [Seu LinkedIn](https://linkedin.com/in/seu-usuario)
+- **Email**: jaymesonmendes@gmail.com
+- **LinkedIn**: [Seu LinkedIn](https://www.linkedin.com/in/jaymesonmendes/)
 
 ---
 
