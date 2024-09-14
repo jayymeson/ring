@@ -1,73 +1,236 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# 🛡️ Ring Management API
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Este é um sistema de gerenciamento de "Rings" (anéis mágicos) construído com **NestJS**, utilizando **MongoDB** para persistência de dados e **Swagger** para documentação de API.
 
-## Description
+## 📚 Funcionalidades
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- CRUD completo para gerenciamento de "Rings":
+  - Criar, listar, atualizar e deletar anéis.
+  - Validação e tratamento de erros.
+  - Enum para tipos de anéis (HUMAN, ELF, SAURON, DWARF).
+- Documentação da API com **Swagger**.
+- Validação de entrada com **class-validator**.
+- Cobertura de testes unitários com **Jest**.
 
-## Installation
+## 🚀 Tecnologias Utilizadas
 
-```bash
-$ npm install
-```
+- **NestJS** - Framework Node.js para construir aplicativos escaláveis.
+- **MongoDB** - Banco de dados NoSQL para armazenamento dos dados dos anéis.
+- **Mongoose** - ODM para MongoDB.
+- **Swagger** - Para documentação da API.
+- **Jest** - Para testes unitários.
 
-## Running the app
+## 🛠️ Pré-requisitos
+
+- **Node.js** (v14+)
+- **MongoDB** (v4.4+)
+
+### 📦 Instalação
+
+1. **Clone o repositório**
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone https://github.com/seu-usuario/ring-management-api.git
+cd ring-management-api
 ```
 
-## Test
+2. **Instale as dependências**
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Support
+3. **Configure as variáveis de ambiente**
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Crie um arquivo `.env` na raiz do projeto e adicione a variável de conexão com o MongoDB:
 
-## Stay in touch
+```bash
+MONGO_URI=mongodb://localhost:27017/ringDB
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+4. **Inicie o servidor MongoDB**
 
-## License
+Certifique-se de que o MongoDB está em execução:
 
-Nest is [MIT licensed](LICENSE).
+```bash
+sudo systemctl start mongod
+```
+
+### 🏃‍♂️ Executando a aplicação
+
+Para rodar a aplicação localmente:
+
+```bash
+npm run start
+```
+
+A API estará disponível em: `http://localhost:3000/api`
+
+### 📖 Documentação da API
+
+Acesse a documentação Swagger em:
+
+```
+http://localhost:3000/api/docs
+```
+
+Lá você encontrará todas as rotas da API com seus detalhes e exemplos.
+
+### 🔧 Scripts Disponíveis
+
+- **Iniciar a aplicação**:
+
+```bash
+npm run start
+```
+
+- **Rodar os testes**:
+
+```bash
+npm run test
+```
+
+- **Rodar a aplicação em modo de desenvolvimento**:
+
+```bash
+npm run start:dev
+```
+
+- **Compilar o projeto**:
+
+```bash
+npm run build
+```
+
+- **Executar lint**:
+
+```bash
+npm run lint
+```
+
+### 🧪 Testes
+
+Os testes de unidade cobrem os serviços e controladores da aplicação. Para rodar os testes, utilize:
+
+```bash
+npm run test
+```
+
+### 🌐 Rotas da API
+
+#### POST /api/ring
+
+Cria um novo "Ring".
+
+**Request body:**
+
+```json
+{
+  "name": "The One Ring",
+  "power": "Invisibility",
+  "ringBearer": "Frodo Baggins",
+  "forger": "Sauron",
+  "type": "SAURON",
+  "image": "https://example.com/ring.jpg"
+}
+```
+
+**Response:**
+
+```json
+{
+  "_id": "613b1e5cfc13ae1dd9000000",
+  "name": "The One Ring",
+  "power": "Invisibility",
+  "ringBearer": "Frodo Baggins",
+  "forger": "Sauron",
+  "type": "SAURON",
+  "image": "https://example.com/ring.jpg",
+  "createdAt": "2024-09-14T11:37:17.759Z",
+  "updatedAt": "2024-09-14T11:37:17.759Z",
+  "__v": 0
+}
+```
+
+#### GET /api/ring
+
+Retorna todos os anéis cadastrados.
+
+#### GET /api/ring/:id
+
+Retorna um anel específico pelo seu `id`.
+
+#### PATCH /api/ring/:id
+
+Atualiza as informações de um anel existente.
+
+#### DELETE /api/ring/:id
+
+Remove um anel pelo seu `id`.
+
+### 📂 Estrutura do Projeto
+
+```bash
+src/
+├── app.controller.ts
+├── app.module.ts
+├── main.ts
+├── ring/
+│   ├── models/
+│   │   ├── dto/
+│   │   │   ├── create-ring.dto.ts
+│   │   │   └── update-ring.dto.ts
+│   │   ├── enum/
+│   │   │   └── ring-type.enum.ts
+│   │   └── interface/
+│   │       └── ring.interface.ts
+│   ├── repository/
+│   │   └── ring.repository.ts
+│   ├── ring.controller.ts
+│   ├── ring.module.ts
+│   ├── ring.service.ts
+├── test/
+│   ├── ring.controller.spec.ts
+│   └── ring.service.spec.ts
+```
+
+### 🔒 Segurança
+
+- Validação de entrada utilizando **class-validator** para garantir que os dados estejam corretos antes de persistir no banco.
+- Uso de **enum** para garantir valores válidos para o tipo do anel (HUMAN, ELF, SAURON, DWARF).
+
+### 📊 Testes e Cobertura
+
+A aplicação inclui testes unitários que cobrem todos os cenários possíveis das rotas. Utilize o comando abaixo para visualizar a cobertura:
+
+```bash
+npm run test:cov
+```
+
+### 🏗️ Contribuindo
+
+Se você quiser contribuir para o projeto, siga os seguintes passos:
+
+1. **Fork o projeto**
+2. Crie uma nova branch: `git checkout -b minha-nova-feature`
+3. Commit suas mudanças: `git commit -m 'Adiciona nova feature'`
+4. Faça um push para a branch: `git push origin minha-nova-feature`
+5. Abra um pull request
+
+### 📝 Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 📞 Contato
+
+Caso tenha alguma dúvida ou sugestão, fique à vontade para entrar em contato:
+
+- **Email**: exemplo@dominio.com
+- **LinkedIn**: [Seu LinkedIn](https://linkedin.com/in/seu-usuario)
+
+---
+
+Este é um README otimizado para garantir uma boa experiência de desenvolvimento, uso e contribuição para o projeto.
